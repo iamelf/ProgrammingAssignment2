@@ -5,8 +5,8 @@
 
 ## makeCacheMatrix:
 ## - Desc: create a special "Matrix" object that can cache its inverse.
-## - Input: 
-## - Output: a special "matrix" object:
+## - Input: a matrix
+## - Output: a special "matrix" object containing the original matrix, a cache and a set of methods to set/get the matrix and cache.
 
 makeCacheMatrix <- function(x = matrix()) {
   s <- NULL
@@ -22,9 +22,9 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve
-## - Desc: 
-## - Input:
-## - Output: 
+## - Desc: Compute the inverse of the special "matrix" object. Retrieve cached value when possible
+## - Input: the special "matrix" object
+## - Output: the inverse of the matrix
 
 cacheSolve <- function(x, ...) {
   s <- x$getSolve()
